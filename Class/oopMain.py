@@ -69,10 +69,4 @@ dog=Dog("Buddy")
 print(dog.speak())
 
 """"------------------------------------------------------------------------------------"""
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-        
-class Lecturer(Person):
-    def __init__()        
+      
