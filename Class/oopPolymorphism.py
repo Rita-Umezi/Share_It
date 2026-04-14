@@ -18,7 +18,28 @@ class Circle(Shape):
     def area(self):
         return 3.14 * self.radius ** 2
 
-
+#same method call-different results, this is polymorphism in action
 shapes = [Rectangle(2, 3), Circle(3)]
 for shape in shapes:
     print(shape.area())
+""""------------------------------------------------------------------------------------------------"""
+#Abstraction
+from abc import ABC, abstractmethod
+
+class PaymentGateway(ABC):
+    @abstractmethod
+    def pay(self, amount):
+        pass
+
+class CardPayment(PaymentGateway):
+        def pay(self, amount):
+            return f"Paid ${amount} using Card"
+        
+class TransferPayment(PaymentGateway):
+        def pay(self, amount):
+            return f"Paid ${amount} using Bank Transfer"
+
+card= CardPayment()
+transfer= TransferPayment()
+print(card.pay(100))
+print(transfer.pay(200))
