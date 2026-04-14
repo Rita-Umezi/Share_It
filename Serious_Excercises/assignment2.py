@@ -19,16 +19,16 @@ class BankAccount:
 
     def __init__(self, account_name, balance):
         self.account_name = account_name  # Instance variable for the account name
-        self._balance = balance  # Instance variable for the account balance (protected)
+        self.__balance = balance  # Instance variable for the account balance (protected)
 
     @property
     def balance(self):
-        return self._balance  # Getter method to retrieve the balance
+        return self.__balance  # Getter method to retrieve the balance
 
     @balance.setter
     def balance(self, value):
         if value >= 0:  # Validate that the balance is not negative
-            self._balance = value  # Setter method to update the balance
+            self.__balance = value  # Setter method to update the balance
         else:
             print("Balance cannot be negative.")
             
