@@ -57,3 +57,26 @@ Manager(overrides work())
 Use super() to initialize parent attributes
 Demonstrate polymorphism using the list of employees
 """
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+        
+    def work(self):
+        return f"{self.name} is working."
+    
+class Developer(Employee):
+    def __init__(self, name, salary, language):
+        super().__init__(name, salary)
+        self.language = language
+        
+    def work(self):
+        return f"{self.name} is coding in {self.language}."
+    
+class Manager(Employee):
+    def work(self):
+        return f"{self.name} is managing the team."
+employees = [Developer("Alice", 70000, "Python"), Manager("Bob", 90000)]
+for employee in employees:
+    print(employee.work())
+    
