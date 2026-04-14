@@ -51,7 +51,7 @@ attributes: name, salary
 method:work()
 
 create two child classes:
-Deeveloper(adds language, overrides work())
+Developer(adds language, overrides work())
 Manager(overrides work())
 
 Use super() to initialize parent attributes
@@ -76,6 +76,7 @@ class Developer(Employee):
 class Manager(Employee):
     def work(self):
         return f"{self.name} is managing the team."
+    
 employees = [Developer("Alice", 70000, "Python"), Manager("Bob", 90000)]
 for employee in employees:
     print(employee.work())
