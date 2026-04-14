@@ -43,3 +43,17 @@ card= CardPayment()
 transfer= TransferPayment()
 print(card.pay(100))
 print(transfer.pay(200))
+
+"""-----------------------------------------------------------------------------------"""
+"""
+create a parent class Employee with 
+attributes: name, salary
+method:work()
+
+create two child classes:
+Deeveloper(adds language, overrides work())
+Manager(overrides work())
+
+Use super() to initialize parent attributes
+Demonstrate polymorphism using the list of employees
+"""
