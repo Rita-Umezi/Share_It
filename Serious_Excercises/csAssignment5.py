@@ -5,29 +5,38 @@
 # display the results.
 
 class Calculation:
-    def add(self, num1, num2):
-        return num1 + num2
+    def __init__(self, num1, num2):
+        self.num1 = num1
+        self.num2 = num2
 
-    def subtract(self, num1, num2):
-        return num1 - num2
+    def add(self):
+        return self.num1 + self.num2
+
+    def subtract(self):
+        return self.num1 - self.num2
 
 
 class AdvancedCalculation(Calculation):
-    def multiply(self, num1, num2):
-        return num1 * num2
+    def __init__(self, num1, num2):
+        super().__init__(num1, num2)
 
-    def divide(self, num1, num2):
-        if num2 == 0:
+    def multiply(self):
+        return self.num1 * self.num2
+
+    def divide(self):
+        if self.num2 != 0:
+            return self.num1 / self.num2
+        else:
             return "Division by zero is not allowed."
-        return num1 / num2
-
-
-calculator = AdvancedCalculation()
-
-first_number = 20
-second_number = 5
-
-print("Addition:", calculator.add(first_number, second_number))
-print("Subtraction:", calculator.subtract(first_number, second_number))
-print("Multiplication:", calculator.multiply(first_number, second_number))
-print("Division:", calculator.divide(first_number, second_number))
+        
+    def display_results(self):
+        print("Addition:", self.add())
+        print("Subtraction:", self.subtract())
+        print("Multiplication:", self.multiply())
+        print("Division:", self.divide())
+        
+# Main program
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+calculation = AdvancedCalculation(num1, num2)
+calculation.display_results()    
