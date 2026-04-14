@@ -33,6 +33,7 @@ print(lecturer1.name)
         
 # Updating the property calls the setter, not the internal attribute directly.
 lecturer1.name="Ade"
+print("Below are the new updated names")
 print(lecturer1.name)
 print(lecturer2.name)
     
