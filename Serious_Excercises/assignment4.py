@@ -37,10 +37,12 @@ class Employee:
 employee1 = Employee("Alice", 50000)
 employee2 = Employee("Bob", 60000)
 employee3 = Employee("Charlie", 55000)
+
 # Display all employee details
 employees = [employee1, employee2, employee3]
 for employee in employees:
     print(f"Name: {employee.name}, Salary: {employee.salary}, Company: {Employee.company_name}")
+    
 # Increase salary for employee1 by adding a bonus
 employee1.salary = 5000  # Valid bonus
 print(f"Updated Employee: {employee1.name}, Salary: {employee1.salary}, Company: {Employee.company_name}")
