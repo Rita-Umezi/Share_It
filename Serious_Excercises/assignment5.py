@@ -20,6 +20,13 @@ class Course:
     def __init__(self, course_code, student_count):
         self.course_code = course_code  # Instance variable for the course code
         self._student_count = student_count  # Instance variable for the student count (protected)
+        
+    @property
+    def details(self):
+        return(
+            f"Course code:{self.course_code}\n"
+            f"Student count:{self.student_count}\n" #Getter metgod to display course details
+        )    
 
     @property
     def student_count(self):
@@ -31,13 +38,19 @@ class Course:
             self._student_count = value  # Setter method to update the student count
         else:
             print(f"Student count cannot exceed {Course.max_students}.")
+            
 # Create 2 course objects
 course1 = Course("CS101", 30)
 course2 = Course("MATH201", 45)
+
 # Display course details
 courses = [course1, course2]
 for course in courses:
-    print(f"Course Code: {course.course_code}, Student Count: {course.student_count}, Max Students: {Course.max_students}")
+   print(course.details)
+   
 # Update student count for course1
 course1.student_count = 40  # Valid update
-print(f"Course: {course1.course_code}, Updated Student Count: {course1.student_count}, Max Students: {Course.max_students}")
+
+print("Below is the updated course details")
+for course in courses:
+    print(course.details)
