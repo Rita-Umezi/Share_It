@@ -60,5 +60,5 @@ product1.price = -100  # Invalid update, should print an error message
 
 #updated product list below
 print("\n Updated product details(price changed) \n")
-for procuct in products:
+for product in products:
     print(product.details)
