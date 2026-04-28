@@ -21,6 +21,15 @@ class Product:
         self.name = name  # Instance variable for the product name
         self._price = price  # Instance variable for the product price (protected)
         self.quantity = quantity  # Instance variable for the product quantity
+        
+    @property #getter to display product details
+    def details(self):
+        return (
+            f"Store: {Product.store_name}\n"
+            f"Product Name: {self.name}\n"
+            f"Product Price: {self.price}\n"
+            f"Product Quantity: {self.quantity}\n"
+        )    
 
     @property
     def price(self):
@@ -35,6 +44,7 @@ class Product:
 
     def total_value(self):
         return self.price * self.quantity  # Method to calculate total value
+    
 # Create 3 products
 product1 = Product("Laptop", 1000, 5)
 product2 = Product("Smartphone", 500, 10)
@@ -43,9 +53,12 @@ product3 = Product("Headphones", 100, 20)
 # Display product details and total value for each product
 products = [product1, product2, product3]
 for product in products:
-    print(f"Product: {product.name}, Price: {product.price}, Quantity: {product.quantity}, Total Value: {product.total_value()}, Store: {Product.store_name}")
+    print(product.details)
 # Update the price for product1
 product1.price = 1200  # Valid update
 product1.price = -100  # Invalid update, should print an error message
-print(f"Updated Product: {product1.name}, Price: {product1.price}, Quantity: {product1.quantity}, Total Value: {product1.total_value()}, Store: {Product.store_name}")
 
+#updated product list below
+print("\n Updated product details(price changed) \n")
+for procuct in products:
+    print(product.details)
