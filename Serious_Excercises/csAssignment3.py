@@ -75,7 +75,7 @@ BankAccount.explain_account_policy()
 # function should also call the static method that explains the account policy. 
 
 class BankAccount:
-    def __init__(self, account_number="", owner_name="", balance=0.0):
+    def __init__(self, account_number, owner_name, balance):
         self._account_number = account_number
         self._owner_name = owner_name
         self._balance = balance
