@@ -14,25 +14,31 @@ class BankAccount:
         self._balance = balance
 
     # Getter and Setter for account_number
-    def get_account_number(self):
+    @property
+    def account_number(self):
         return self._account_number
 
-    def set_account_number(self, account_number):
-        self._account_number = account_number
+    @account_number.setter
+    def account_number(self, value):
+        self._account_number = value
 
     # Getter and Setter for owner_name
-    def get_owner_name(self):
+    @property
+    def owner_name(self):
         return self._owner_name
 
-    def set_owner_name(self, owner_name):
-        self._owner_name = owner_name
+    @owner_name.setter
+    def owner_name(self, value):
+        self._owner_name = value
 
     # Getter and Setter for balance
-    def get_balance(self):
+    @property
+    def balance(self):
         return self._balance
 
-    def set_balance(self, balance):
-        self._balance = balance
+    @balance.setter
+    def balance(self, value):
+        self._balance = value
 
     # Method to deduct monthly fee
     def deduct_monthly_fee(self):
@@ -47,13 +53,13 @@ class BankAccount:
 # Example usage
 account = BankAccount("123456", "Ria", 100.0)
 
-print("Account Number:", account.get_account_number())
-print("Owner Name:", account.get_owner_name())
-print("Balance before fee:", account.get_balance())
+print("Account Number:", account.account_number)
+print("Owner Name:", account.owner_name)
+print("Balance before fee:", account.balance)
 
 account.deduct_monthly_fee()
 
-print("Balance after fee:", account.get_balance())
+print("Balance after fee:", account.balance)
 
 BankAccount.explain_account_policy()
 """------------------------------------------------------------------------------------------------"""
@@ -69,29 +75,35 @@ BankAccount.explain_account_policy()
 # function should also call the static method that explains the account policy. 
 
 class BankAccount:
-    def __init__(self, account_number, owner_name, balance):
+    def __init__(self, account_number="", owner_name="", balance=0.0):
         self._account_number = account_number
         self._owner_name = owner_name
         self._balance = balance
 
     # Getters and Setters
-    def get_account_number(self):
+    @property
+    def account_number(self):
         return self._account_number
 
-    def set_account_number(self, account_number):
-        self._account_number = account_number
+    @account_number.setter
+    def account_number(self, value):
+        self._account_number = value
 
-    def get_owner_name(self):
+    @property
+    def owner_name(self):
         return self._owner_name
 
-    def set_owner_name(self, owner_name):
-        self._owner_name = owner_name
+    @owner_name.setter
+    def owner_name(self, value):
+        self._owner_name = value
 
-    def get_balance(self):
+    @property
+    def balance(self):
         return self._balance
 
-    def set_balance(self, balance):
-        self._balance = balance
+    @balance.setter
+    def balance(self, value):
+        self._balance = value
 
     # Deduct monthly fee
     def deduct_monthly_fee(self):
@@ -114,13 +126,13 @@ def get_data():
 # Function to display details and update balance
 def show_values(account):
     print("\nAccount Details")
-    print("Account Number:", account.get_account_number())
-    print("Owner Name:", account.get_owner_name())
-    print("Balance before fee:", account.get_balance())
+    print("Account Number:", account.account_number)
+    print("Owner Name:", account.owner_name)
+    print("Balance before fee:", account.balance)
 
     account.deduct_monthly_fee()
 
-    print("Balance after fee:", account.get_balance())
+    print("Balance after fee:", account.balance)
 
     # Call static method
     BankAccount.explain_account_policy()
