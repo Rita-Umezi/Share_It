@@ -30,6 +30,7 @@ lecturer2=Lecturer("Adebanjo", "002")
 
 # Accessing the property calls the getter behind the scenes.
 print(lecturer1.name)
+print(lecturer2.name)
         
 # Updating the property calls the setter, not the internal attribute directly.
 lecturer1.name="Ade"
