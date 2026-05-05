@@ -1,7 +1,7 @@
 <?php
 include('database.php');
 
-if(isset($_POST['name']) && isset($_POST['height']) && isset($_POST['weight'])) {
+if(isset($_POST['submit'])) {
     $name = $_POST['name'];
     $height = $_POST['height'];
     $weight = $_POST['weight'];
